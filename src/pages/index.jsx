@@ -4,7 +4,6 @@ import {
   Grid,
   GridItem,
   Badge,
-  ChakraProvider,
   Box,
   Flex,
   Heading,
@@ -19,12 +18,35 @@ import {
   Td,
   Avatar,
   Divider,
+  ChakraProvider, 
+  CSSReset,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import GoogleMapReact from "google-map-react";
 import "@fontsource-variable/grandstander";
 import "@fontsource/chelsea-market";
 import theme from "../styles/theme";
+import { Global, css } from '@emotion/react'
+
+const customScrollBar = css`
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #2DB88E, #F78154, #F5DA8A, #FBF9EE, #90C2E7); 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2DB88E, #F78154, #F5DA8A, #FBF9EE, #90C2E7); 
+  }
+`;
+
 
 const MotionBox = motion(Box);
 const MotionGridItem = motion(GridItem);
@@ -52,6 +74,7 @@ const teamMembers = [
 
 const App = () => (
   <ChakraProvider theme={theme}>
+      <Global styles={customScrollBar} />
     <Box
       bgImage="url('/upoasis.png')"
       bgPosition="center"
