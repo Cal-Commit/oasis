@@ -43,9 +43,9 @@ const defaultProps = {
 const teamMembers = [
   { name: "Arnav Pandey", image: "https://arnavpandey.xyz/picture.png" },
   { name: "Rohan Ramakrishnan", image: "https://arnavpandey.xyz/picture.png" },
+  { name: "Aditya Sahasranam", image: "https://arnavpandey.xyz/picture.png" },
   { name: "Swayam Shah", image: "https://arnavpandey.xyz/picture.png" },
   { name: "Srinikesh Kanneluru", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Aditya Sahasranam", image: "https://arnavpandey.xyz/picture.png" },
   { name: "Tiffany Zhang", image: "https://arnavpandey.xyz/picture.png" },
   { name: "Caitelyn Huang ", image: "https://arnavpandey.xyz/picture.png" },
 ];
@@ -112,8 +112,8 @@ const App = () => (
                 defaultZoom={defaultProps.zoom}
               >
                 <Marker
-                  lat={defaultProps.center.lat}
-                  lng={defaultProps.center.lng}
+                  lat="37.74065"
+                  lng="-122.20119"
                 />
               </GoogleMapReact>
             </Box>
@@ -123,10 +123,10 @@ const App = () => (
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <MotionText mb="2">
+            <MotionText mt="8" mb="2">
               <b>Date:</b>
             </MotionText>{" "}
-            <Badge colorScheme="teal">July 30, 2023</Badge>
+            <Badge colorScheme="teal">August 6, 2023</Badge>
             <MotionText mb="2">
               <b>Time:</b>
             </MotionText>{" "}
@@ -163,29 +163,55 @@ const App = () => (
 
       <Divider />
 
-      {/* Our Team Section */}
-      <Box p="6">
-        <Heading as="h3" size="md" textAlign="center">
-          Our Team
-        </Heading>
-        <Flex mt="4" justify="center" wrap="wrap">
-          {teamMembers.map((member, i) => (
-            <MotionBox
-              justifyContent="center"
-              textAlign="center"
-              key={i}
-              mx="3"
-              my="2"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <MotionAvatar size="xl" name={member.name} src={member.image} />
-              <MotionText mt="2">{member.name}</MotionText>
-            </MotionBox>
-          ))}
+     {/* Our Team Section */}
+<Box p="6">
+  <Heading as="h3" size="md" textAlign="center">
+    Our Team
+  </Heading>
+  <Flex mt="4" justify="center" wrap="wrap">
+    {teamMembers.slice(0, 3).map((member, i) => (
+      <MotionBox
+        padding="4"
+        justifyContent="center"
+        textAlign="center"
+        key={i}
+        mx="3"
+        my="2"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: i * 0.1 }}
+        width="200px"  // Set a fixed width
+      >
+        <MotionAvatar size="xl" name={member.name} src={member.image} />
+        <Flex width="100%" justifyContent="center"> {/* Add this */}
+          <MotionText mt="2" isTruncated>{member.name}</MotionText>
         </Flex>
-      </Box>
+      </MotionBox>
+    ))}
+  </Flex>
+  <Flex justify="center" wrap="wrap">
+    {teamMembers.slice(3).map((member, i) => (
+      <MotionBox
+        padding="4"
+        justifyContent="center"
+        textAlign="center"
+        key={i}
+        mx="3"
+        my="2"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: i * 0.1 }}
+        width="200px"  // Set a fixed width
+      >
+        <MotionAvatar size="xl" name={member.name} src={member.image} />
+        <Flex width="100%" justifyContent="center"> {/* Add this */}
+          <MotionText mt="2" isTruncated>{member.name}</MotionText>
+        </Flex>
+      </MotionBox>
+    ))}
+  </Flex>
+</Box>
+
 
       <Divider />
 
