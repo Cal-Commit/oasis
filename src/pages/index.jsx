@@ -20,6 +20,11 @@ import {
   Divider,
   ChakraProvider,
   CSSReset,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import GoogleMapReact from "google-map-react";
@@ -67,6 +72,7 @@ const MotionGridItem = motion(GridItem);
 const MotionText = motion(Text);
 const MotionAvatar = motion(Avatar);
 const MotionTr = motion(Tr);
+const Marker = () => <img src="/palm.png" alt='marker' style={{ width: '40px', height: '40px' }} />;
 
 const defaultProps = {
   center: {
@@ -85,7 +91,21 @@ const teamMembers = [
   { name: "Tiffany Zhang", image: "https://arnavpandey.xyz/picture.png" },
   { name: "Caitelyn Huang ", image: "https://arnavpandey.xyz/picture.png" },
 ];
-
+const faqData = [
+  {
+    question: "Question 1",
+    answer: "Answer 1",
+  },
+  {
+    question: "Question 2",
+    answer: "Answer 2",
+  },
+  {
+    question: "Question 3",
+    answer: "Answer 3",
+  },
+  // Add more questions and answers as needed
+];
 const App = () => (
   <ChakraProvider theme={theme}>
     <Global styles={customScrollBar} />
@@ -103,12 +123,15 @@ const App = () => (
         direction="column"
         minHeight="100vh"
       >
+                          <Image src="/oasislogo.png" alt="Logo" boxSize="100px" mb="4" />
+
         <motion.div
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Heading as="h1" size="2xl">
+
+          <Heading textAlign="center" as="h1" size="2xl">
             Welcome to Oasis Hacks!
           </Heading>
         </motion.div>
@@ -123,57 +146,33 @@ const App = () => (
         </motion.div>
       </Flex>
 
-      <Divider />
-
-      {/* How to Join Section */}
       <Box p="6">
-        <Heading as="h2" size="xl">
-          How to Join
-        </Heading>
-        <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
-          <MotionGridItem
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <MotionText mb="4">
-              Our hackathon will be held at Circuit Launch in Oakland. Here is
-              the location:
-            </MotionText>
-            <Box height="300px" width="100%">
-              <GoogleMapReact
-                bootstrapURLKeys={{
-                  key: "AIzaSyC8LARehk_tCeU6Vtf4_paWej9tKPnrl6U",
-                }}
-                defaultCenter={defaultProps.center}
-                defaultZoom={defaultProps.zoom}
-              >
-                <Marker lat="37.74065" lng="-122.20119" />
-              </GoogleMapReact>
-            </Box>
-          </MotionGridItem>
-          <MotionGridItem
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
-            <MotionText mt="8" mb="2">
-              <b>Date:</b>
-            </MotionText>{" "}
-            <Badge colorScheme="teal">August 6, 2023</Badge>
-            <MotionText mb="2">
-              <b>Time:</b>
-            </MotionText>{" "}
-            <Badge colorScheme="teal">8 A.M. - 8 P.M.</Badge>
-            <MotionText mb="2">
-              <b>Address:</b> Circuit Launch, Oakland
-            </MotionText>
-            <Button colorScheme="teal" mt="4">
-              <a href="https://calcommit.org">Join Here!</a>
-            </Button>
-          </MotionGridItem>
-        </Grid>
-      </Box>
+  <Heading as="h2" size="2xl" textAlign="center" mb="6">
+    How to Join
+  </Heading>
+  <Center>
+    <Box maxWidth="800px" textAlign="center">
+      <Flex alignItems="center" mb="4" justifyContent="space-between">
+        <Text fontSize="30px">
+          <b>Date:</b>
+        </Text>
+        <Badge fontSize='2em' colorScheme="yellow">August 6, 2023</Badge>
+      </Flex>
+      <Flex alignItems="center" mb="4" justifyContent="space-between">
+        <Text fontSize="30px">
+          <b>Time:</b>
+        </Text>
+        <Badge fontSize='2em' colorScheme="yellow">8 A.M. - 8 P.M.</Badge>
+      </Flex>
+      <Text mb="4">
+        <b>Address:</b> Circuit Launch, Oakland
+      </Text>
+      <Button colorScheme="teal" mt="6">
+        <a href="https://calcommit.org">Join Here!</a>
+      </Button>
+    </Box>
+  </Center>
+</Box>
 
       {/* About Us Section */}
       <MotionBox
@@ -353,7 +352,25 @@ const App = () => (
           </Tbody>
         </Table>
       </Box>
-
+{/* FAQ Section */}
+<Box p="6">
+        <Heading as="h3" size="lg" textAlign="center">
+          FAQ
+        </Heading>
+        <Accordion allowMultiple mt="4">
+          {faqData.map((faq, i) => (
+            <AccordionItem key={i}>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  {faq.question}
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel>{faq.answer}</AccordionPanel>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Box>
       <Divider />
 
       {/* Footer */}
@@ -367,16 +384,6 @@ const App = () => (
   </ChakraProvider>
 );
 
-// Create a marker component for Google Maps
-const Marker = () => (
-  <div
-    style={{
-      backgroundColor: "red",
-      height: "50px",
-      width: "50px",
-      borderRadius: "50%",
-    }}
-  />
-);
+
 
 export default App;
