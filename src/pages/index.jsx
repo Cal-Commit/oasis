@@ -156,7 +156,7 @@ const App = () => (
           <Box maxWidth="800px" textAlign="center">
             <Flex alignItems="center" mb="4" justifyContent="space-between">
               <Text fontSize="30px">
-                <b>Date:</b>
+                <b>Date: &nbsp;  </b>
               </Text>
               <Badge fontSize="2em" colorScheme="yellow">
                 August 6, 2023
