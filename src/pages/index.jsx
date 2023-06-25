@@ -18,7 +18,7 @@ import {
   Td,
   Avatar,
   Divider,
-  ChakraProvider, 
+  ChakraProvider,
   CSSReset,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -26,7 +26,8 @@ import GoogleMapReact from "google-map-react";
 import "@fontsource-variable/grandstander";
 import "@fontsource/chelsea-market";
 import theme from "../styles/theme";
-import { Global, css } from '@emotion/react'
+import { Global, css } from "@emotion/react";
+import Link from "next/link";
 
 const customScrollBar = css`
   ::-webkit-scrollbar {
@@ -34,19 +35,32 @@ const customScrollBar = css`
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent; 
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #2DB88E, #F78154, #F5DA8A, #FBF9EE, #90C2E7); 
+    background: linear-gradient(
+      to bottom,
+      #2db88e,
+      #f78154,
+      #f5da8a,
+      #fbf9ee,
+      #90c2e7
+    );
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #2DB88E, #F78154, #F5DA8A, #FBF9EE, #90C2E7); 
+    background: linear-gradient(
+      to bottom,
+      #2db88e,
+      #f78154,
+      #f5da8a,
+      #fbf9ee,
+      #90c2e7
+    );
   }
 `;
-
 
 const MotionBox = motion(Box);
 const MotionGridItem = motion(GridItem);
@@ -74,7 +88,7 @@ const teamMembers = [
 
 const App = () => (
   <ChakraProvider theme={theme}>
-      <Global styles={customScrollBar} />
+    <Global styles={customScrollBar} />
     <Box
       bgImage="url('/upoasis.png')"
       bgPosition="center"
@@ -134,10 +148,7 @@ const App = () => (
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
               >
-                <Marker
-                  lat="37.74065"
-                  lng="-122.20119"
-                />
+                <Marker lat="37.74065" lng="-122.20119" />
               </GoogleMapReact>
             </Box>
           </MotionGridItem>
@@ -164,83 +175,99 @@ const App = () => (
         </Grid>
       </Box>
 
-      <Divider />
-
       {/* About Us Section */}
       <MotionBox
         p="6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
+        overflow="hidden"
       >
-        <Heading as="h3" size="lg">
+        <Heading as="h3" size="lg" textAlign="center" py="4">
           About Cal Commit
         </Heading>
-        <MotionText>
+        <MotionText fontSize="md" px="4" mt="4">
           Our mission is to equip computer science students with the skills and
           tools for successful collaboration and software development through
           participation in open-source projects, training in version control
-          software, and competitions. To get started, simply Sign Up
+          software, and competitions.
         </MotionText>
+        <MotionText fontSize="md" px="4" mt="4">
+          As a non-profit organization, we award volunteer hours to those who
+          contribute to open source projects. We also retain the ability to
+          distribute the President's Volunteer Service Award. Which is a highly
+          recognized award that is given to those who volunteer a certain amount
+          of hours. This looks great on college applications and resumes.
+        </MotionText>
+        <MotionText fontSize="md" px="4" mt="4" mb="4">
+          Visit our website at{" "}
+          <Link href="https://calcommit.org" color="yellow.200">
+            calcommit.org
+          </Link>
+        </MotionText>
+
       </MotionBox>
 
-      <Divider />
-
-     {/* Our Team Section */}
-<Box p="6">
-  <Heading as="h3" size="md" textAlign="center">
-    Our Team
-  </Heading>
-  <Flex mt="4" justify="center" wrap="wrap">
-    {teamMembers.slice(0, 3).map((member, i) => (
-      <MotionBox
-        padding="4"
-        justifyContent="center"
-        textAlign="center"
-        key={i}
-        mx="3"
-        my="2"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: i * 0.1 }}
-        width="200px"  // Set a fixed width
-      >
-        <MotionAvatar size="xl" name={member.name} src={member.image} />
-        <Flex width="100%" justifyContent="center"> {/* Add this */}
-          <MotionText mt="2" isTruncated>{member.name}</MotionText>
+      {/* Our Team Section */}
+      <Box p="6">
+        <Heading as="h3" size="lg" textAlign="center">
+          Our Team
+        </Heading>
+        <Flex mt="4" justify="center" wrap="wrap">
+          {teamMembers.slice(0, 3).map((member, i) => (
+            <MotionBox
+              padding="4"
+              justifyContent="center"
+              textAlign="center"
+              key={i}
+              mx="3"
+              my="2"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              width="200px" // Set a fixed width
+            >
+              <MotionAvatar size="xl" name={member.name} src={member.image} />
+              <Flex width="100%" justifyContent="center">
+                {" "}
+                {/* Add this */}
+                <MotionText mt="2" isTruncated>
+                  {member.name}
+                </MotionText>
+              </Flex>
+            </MotionBox>
+          ))}
         </Flex>
-      </MotionBox>
-    ))}
-  </Flex>
-  <Flex justify="center" wrap="wrap">
-    {teamMembers.slice(3).map((member, i) => (
-      <MotionBox
-        padding="4"
-        justifyContent="center"
-        textAlign="center"
-        key={i}
-        mx="3"
-        my="2"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: i * 0.1 }}
-        width="200px"  // Set a fixed width
-      >
-        <MotionAvatar size="xl" name={member.name} src={member.image} />
-        <Flex width="100%" justifyContent="center"> {/* Add this */}
-          <MotionText mt="2" isTruncated>{member.name}</MotionText>
+        <Flex justify="center" wrap="wrap">
+          {teamMembers.slice(3).map((member, i) => (
+            <MotionBox
+              padding="4"
+              justifyContent="center"
+              textAlign="center"
+              key={i}
+              mx="3"
+              my="2"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              width="200px" // Set a fixed width
+            >
+              <MotionAvatar size="xl" name={member.name} src={member.image} />
+              <Flex width="100%" justifyContent="center">
+                {" "}
+                {/* Add this */}
+                <MotionText mt="2" isTruncated>
+                  {member.name}
+                </MotionText>
+              </Flex>
+            </MotionBox>
+          ))}
         </Flex>
-      </MotionBox>
-    ))}
-  </Flex>
-</Box>
-
-
-      <Divider />
+      </Box>
 
       {/* Schedule */}
       <Box p="6">
-        <Heading as="h3" size="md" textAlign="center">
+        <Heading as="h3" size="lg" textAlign="center">
           Schedule
         </Heading>
         <Table variant="simple">
