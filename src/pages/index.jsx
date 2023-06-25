@@ -72,7 +72,9 @@ const MotionGridItem = motion(GridItem);
 const MotionText = motion(Text);
 const MotionAvatar = motion(Avatar);
 const MotionTr = motion(Tr);
-const Marker = () => <img src="/palm.png" alt='marker' style={{ width: '40px', height: '40px' }} />;
+const Marker = () => (
+  <img src="/palm.png" alt="marker" style={{ width: "40px", height: "40px" }} />
+);
 
 const defaultProps = {
   center: {
@@ -83,13 +85,13 @@ const defaultProps = {
 };
 
 const teamMembers = [
-  { name: "Arnav Pandey", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Rohan Ramakrishnan", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Aditya Sahasranam", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Swayam Shah", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Srinikesh Kanneluru", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Tiffany Zhang", image: "https://arnavpandey.xyz/picture.png" },
-  { name: "Caitelyn Huang ", image: "https://arnavpandey.xyz/picture.png" },
+  { name: "Arnav Pandey", image: "https://splitxorpio.github.io/portfolio/picture.png" },
+  { name: "Rohan Ramakrishnan", image: "https://static.wixstatic.com/media/8a7384_4f4eb4ece187481980253a014e735023~mv2.png/v1/crop/x_28,y_16,w_475,h_474/fill/w_253,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Rohan%201.png" },
+  { name: "Aditya Sahasranam", image: "https://cdn.discordapp.com/attachments/997774498973626418/1122391117296570449/IMG_4747.jpg" },
+  { name: "Swayam Shah", image: "https://static.wixstatic.com/media/8a7384_b4cbb075bfbc4be99c44f656834059d5~mv2.jpg/v1/crop/x_0,y_6,w_233,h_233/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/IMG_B460E9285B46-1.jpg" },
+  { name: "Srinikesh Kanneluru", image: "https://static.wixstatic.com/media/8a7384_c52993baccf54e93910fdc7209a023db~mv2.jpeg/v1/crop/x_0,y_33,w_1213,h_1215/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/image0.jpeg" },
+  { name: "Tiffany Zhang", image: "https://roborally.calcommit.org/tiff.jpg" },
+  { name: "Caitelyn Huang ", image: "https://roborally.calcommit.org/caitelyn.jpg" },
 ];
 const faqData = [
   {
@@ -123,14 +125,13 @@ const App = () => (
         direction="column"
         minHeight="100vh"
       >
-                          <Image src="/oasislogo.png" alt="Logo" boxSize="100px" mb="4" />
+        <Image src="/oasislogo.png" alt="Logo" boxSize="100px" mb="4" />
 
         <motion.div
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-
           <Heading textAlign="center" as="h1" size="2xl">
             Welcome to Oasis Hacks!
           </Heading>
@@ -145,34 +146,39 @@ const App = () => (
           </Text>
         </motion.div>
       </Flex>
+      {/* How to Join */}
 
       <Box p="6">
-  <Heading as="h2" size="2xl" textAlign="center" mb="6">
-    How to Join
-  </Heading>
-  <Center>
-    <Box maxWidth="800px" textAlign="center">
-      <Flex alignItems="center" mb="4" justifyContent="space-between">
-        <Text fontSize="30px">
-          <b>Date:</b>
-        </Text>
-        <Badge fontSize='2em' colorScheme="yellow">August 6, 2023</Badge>
-      </Flex>
-      <Flex alignItems="center" mb="4" justifyContent="space-between">
-        <Text fontSize="30px">
-          <b>Time:</b>
-        </Text>
-        <Badge fontSize='2em' colorScheme="yellow">8 A.M. - 8 P.M.</Badge>
-      </Flex>
-      <Text mb="4">
-        <b>Address:</b> Circuit Launch, Oakland
-      </Text>
-      <Button colorScheme="teal" mt="6">
-        <a href="https://calcommit.org">Join Here!</a>
-      </Button>
-    </Box>
-  </Center>
-</Box>
+        <Heading as="h2" size="2xl" textAlign="center" mb="6">
+          How to Join
+        </Heading>
+        <Center>
+          <Box maxWidth="800px" textAlign="center">
+            <Flex alignItems="center" mb="4" justifyContent="space-between">
+              <Text fontSize="30px">
+                <b>Date:</b>
+              </Text>
+              <Badge fontSize="2em" colorScheme="yellow">
+                August 6, 2023
+              </Badge>
+            </Flex>
+            <Flex alignItems="center" mb="4" justifyContent="space-between">
+              <Text fontSize="30px">
+                <b>Time:</b>
+              </Text>
+              <Badge fontSize="2em" colorScheme="yellow">
+                8 A.M. - 8 P.M.
+              </Badge>
+            </Flex>
+            <Text mb="4">
+              <b>Address:</b> Circuit Launch, Oakland
+            </Text>
+            <Button colorScheme="teal" mt="6">
+              <a href="https://calcommit.org">Join Here!</a>
+            </Button>
+          </Box>
+        </Center>
+      </Box>
 
       {/* About Us Section */}
       <MotionBox
@@ -204,7 +210,6 @@ const App = () => (
             calcommit.org
           </Link>
         </MotionText>
-
       </MotionBox>
 
       {/* Our Team Section */}
@@ -224,9 +229,9 @@ const App = () => (
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              width="200px" // Set a fixed width
+              width="230px" // Set a fixed width
             >
-              <MotionAvatar size="xl" name={member.name} src={member.image} />
+              <MotionAvatar size="2xl" name={member.name} src={member.image} />
               <Flex width="100%" justifyContent="center">
                 {" "}
                 {/* Add this */}
@@ -249,9 +254,9 @@ const App = () => (
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              width="200px" // Set a fixed width
+              width="230px" // Set a fixed width
             >
-              <MotionAvatar size="xl" name={member.name} src={member.image} />
+              <MotionAvatar size="2xl" name={member.name} src={member.image} />
               <Flex width="100%" justifyContent="center">
                 {" "}
                 {/* Add this */}
@@ -352,8 +357,8 @@ const App = () => (
           </Tbody>
         </Table>
       </Box>
-{/* FAQ Section */}
-<Box p="6">
+      {/* FAQ Section */}
+      <Box p="6">
         <Heading as="h3" size="lg" textAlign="center">
           FAQ
         </Heading>
@@ -383,7 +388,5 @@ const App = () => (
     </Box>
   </ChakraProvider>
 );
-
-
 
 export default App;
