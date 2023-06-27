@@ -93,6 +93,9 @@ const faqData = [
     question: "What are the prizes for the OasisHacks?",
     answer: "The prize details will be announced closer to the event date. However, previous years have offered cash prizes, sponsor prizes, and other valuable rewards.",
   },
+  { question: "When and where is OasisHacks taking place?  ",
+    answer: "he date has been decided to be on August 6th, 2023. This hackathon is an in-person, 12 hour long hackathon at Circuit Launch in Oakland, CA. Stay tuned on our Discord for more updates (https://discord.gg/Mtt9mGNu3Z)."
+  }
 ];
 
 const App = () => (
