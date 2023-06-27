@@ -74,6 +74,7 @@ const teamMembers = [
   { name: "Srinikesh Kanneluru", image: "https://cdn.discordapp.com/attachments/1050157259134611476/1122609138292228156/Professinoal_Profile_Pic.png" },
   { name: "Tiffany Zhang", image: "https://roborally.calcommit.org/tiff.jpg" },
   { name: "Caitelyn Huang ", image: "https://cdn.discordapp.com/attachments/997774498973626418/1123118877983899690/IMG_3724.png" },
+  {name : "Vivaan Vora", image:"https://cdn.discordapp.com/attachments/1065021922447999036/1079588343773413486/vivaan-vora.04d0429.png"},
 ];
 const faqData = [
   {
@@ -200,7 +201,7 @@ const App = () => (
           Our Team
         </Heading>
         <Flex mt="4" justify="center" wrap="wrap">
-          {teamMembers.slice(0, 3).map((member, i) => (
+          {teamMembers.slice(0, 4).map((member, i) => (
             <MotionBox
               padding="4"
               justifyContent="center"
@@ -225,7 +226,7 @@ const App = () => (
           ))}
         </Flex>
         <Flex justify="center" wrap="wrap">
-          {teamMembers.slice(3).map((member, i) => (
+          {teamMembers.slice(4).map((member, i) => (
             <MotionBox
               padding="4"
               justifyContent="center"
