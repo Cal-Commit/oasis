@@ -36,7 +36,7 @@ import Link from "next/link";
 
 const customScrollBar = css`
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
   }
 
   ::-webkit-scrollbar-track {
@@ -44,28 +44,10 @@ const customScrollBar = css`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      to bottom,
-      #2db88e,
-      #f78154,
-      #f5da8a,
-      #fbf9ee,
-      #90c2e7
-    );
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-      to bottom,
-      #2db88e,
-      #f78154,
-      #f5da8a,
-      #fbf9ee,
-      #90c2e7
-    );
+    background: transparent;
   }
 `;
+
 
 const MotionBox = motion(Box);
 const MotionGridItem = motion(GridItem);
@@ -91,7 +73,7 @@ const teamMembers = [
   { name: "Swayam Shah", image: "https://static.wixstatic.com/media/8a7384_b4cbb075bfbc4be99c44f656834059d5~mv2.jpg/v1/crop/x_0,y_6,w_233,h_233/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/IMG_B460E9285B46-1.jpg" },
   { name: "Srinikesh Kanneluru", image: "https://cdn.discordapp.com/attachments/1050157259134611476/1122609138292228156/Professinoal_Profile_Pic.png" },
   { name: "Tiffany Zhang", image: "https://roborally.calcommit.org/tiff.jpg" },
-  { name: "Caitelyn Huang ", image: "https://roborally.calcommit.org/caitelyn.jpg" },
+  { name: "Caitelyn Huang ", image: "https://cdn.discordapp.com/attachments/997774498973626418/1123118877983899690/IMG_3724.png" },
 ];
 const faqData = [
   {
