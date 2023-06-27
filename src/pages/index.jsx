@@ -78,19 +78,23 @@ const teamMembers = [
 ];
 const faqData = [
   {
-    question: "Question 1",
-    answer: "Answer 1",
+    question: "Who can participate at OasisHacks?",
+    answer: "OskiHacks is open to all students, under the age of 18, who are interested in technology, engineering, and innovation, but we aim to be a high school student driven hackathon.",
   },
   {
-    question: "Question 2",
-    answer: "Answer 2",
+    question: "What resources will be provided to participants at OasisHacks?",
+    answer: "Participants will have access to a range of resources, including expert mentorship, cutting-edge technologies and platforms, and networking opportunities with peers and industry partners.",
   },
   {
-    question: "Question 3",
-    answer: "Answer 3",
+    question: "Can I participate as an individual, or do I need to form a team?",
+    answer: "You can participate as an individual or as part of a team. We encourage participants to form teams of up to 4 members to promote collaboration and diversity of skills.",
   },
-  // Add more questions and answers as needed
+  {
+    question: "What are the prizes for the OasisHacks?",
+    answer: "The prize details will be announced closer to the event date. However, previous years have offered cash prizes, sponsor prizes, and other valuable rewards.",
+  },
 ];
+
 const App = () => (
   <ChakraProvider theme={theme}>
     <Global styles={customScrollBar} />
@@ -258,87 +262,112 @@ const App = () => (
           Schedule
         </Heading>
         <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>Time</Th>
-              <Th>Event</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Td>8:00 - 9:00</Td>
-              <Td>Welcome / Opening Ceremony</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Td>9:00 - 11:00</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Td>11:00 - 12:00</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Td>12:00 - 1:00</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <Td>1:00 - 2:00</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <Td>2:00 - 5:00</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <Td>5:00 - 5:30</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <Td>5:30 - 7:30</Td>
-              <Td>Event Description</Td>
-            </MotionTr>
-            <MotionTr
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-            >
-              <Td>7:30 - 8:00</Td>
-              <Td>Closing Ceremony</Td>
-            </MotionTr>
-          </Tbody>
-        </Table>
+  <Thead>
+    <Tr>
+      <Th>Time</Th>
+      <Th>Event</Th>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+    >
+      <Td>8:00 - 9:00</Td>
+      <Td>Welcome / Opening Ceremony</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
+      <Td>9:00 - 10:00</Td>
+      <Td>Workshop 1: Introduction to Python</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+    >
+      <Td>10:00 - 11:00</Td>
+      <Td>Activity 1: Icebreaker Challenges</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
+      <Td>11:00 - 12:00</Td>
+      <Td>Workshop 2: Introduction to Web Development</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
+      <Td>12:00 - 1:00</Td>
+      <Td>Lunch Break</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
+    >
+      <Td>1:00 - 2:00</Td>
+      <Td>Workshop 3: MARGIN VS PADDING</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.7 }}
+    >
+      <Td>2:00 - 3:00</Td>
+      <Td>Activity 2: Team Brainstorming Session</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.8 }}
+    >
+      <Td>3:00 - 4:00</Td>
+      <Td>Workshop 4: Advanced JavaScript Techniques</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.9 }}
+    >
+      <Td>4:00 - 5:00</Td>
+      <Td>Activity 3: Code Challenge</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1 }}
+    >
+      <Td>5:00 - 6:00</Td>
+      <Td>Activity 4: Break & Networking</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1.1 }}
+    >
+      <Td>6:00 - 7:30</Td>
+      <Td>Judging Period</Td>
+    </MotionTr>
+    <MotionTr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1.2 }}
+    >
+      <Td>7:30 - 8:00</Td>
+      <Td>Closing Ceremony & Award Announcement</Td>
+    </MotionTr>
+  </Tbody>
+</Table>
+
       </Box>
       {/* FAQ Section */}
       <Box p="6">
