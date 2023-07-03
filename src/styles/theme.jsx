@@ -15,6 +15,7 @@ const theme = extendTheme({
     heading: `'Grandstander Variable', sans-serif`,
     body: `'Chelsea Market', sans-serif`,    
   }
+
 });
 
 export default theme;

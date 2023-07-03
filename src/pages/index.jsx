@@ -48,7 +48,6 @@ const customScrollBar = css`
   }
 `;
 
-
 const MotionBox = motion(Box);
 const MotionGridItem = motion(GridItem);
 const MotionText = motion(Text);
@@ -67,35 +66,69 @@ const defaultProps = {
 };
 
 const teamMembers = [
-  { name: "Arnav Pandey", image: "https://splitxorpio.github.io/portfolio/picture.png" },
-  { name: "Rohan Ramakrishnan", image: "https://static.wixstatic.com/media/8a7384_4f4eb4ece187481980253a014e735023~mv2.png/v1/crop/x_28,y_16,w_475,h_474/fill/w_253,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Rohan%201.png" },
-  { name: "Aditya Sahasranam", image: "https://cdn.discordapp.com/attachments/997774498973626418/1122391117296570449/IMG_4747.jpg" },
-  { name: "Swayam Shah", image: "https://static.wixstatic.com/media/8a7384_b4cbb075bfbc4be99c44f656834059d5~mv2.jpg/v1/crop/x_0,y_6,w_233,h_233/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/IMG_B460E9285B46-1.jpg" },
-  { name: "Srinikesh Kanneluru", image: "https://cdn.discordapp.com/attachments/1050157259134611476/1122609138292228156/Professinoal_Profile_Pic.png" },
+  {
+    name: "Arnav Pandey",
+    image: "https://splitxorpio.github.io/portfolio/picture.png",
+  },
+  {
+    name: "Rohan Ramakrishnan",
+    image:
+      "https://static.wixstatic.com/media/8a7384_4f4eb4ece187481980253a014e735023~mv2.png/v1/crop/x_28,y_16,w_475,h_474/fill/w_253,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Rohan%201.png",
+  },
+  {
+    name: "Aditya Sahasranam",
+    image:
+      "https://cdn.discordapp.com/attachments/997774498973626418/1122391117296570449/IMG_4747.jpg",
+  },
+  {
+    name: "Swayam Shah",
+    image:
+      "https://static.wixstatic.com/media/8a7384_b4cbb075bfbc4be99c44f656834059d5~mv2.jpg/v1/crop/x_0,y_6,w_233,h_233/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/IMG_B460E9285B46-1.jpg",
+  },
+  {
+    name: "Srinikesh Kanneluru",
+    image:
+      "https://cdn.discordapp.com/attachments/1050157259134611476/1122609138292228156/Professinoal_Profile_Pic.png",
+  },
   { name: "Tiffany Zhang", image: "https://roborally.calcommit.org/tiff.jpg" },
-  { name: "Caitelyn Huang ", image: "https://cdn.discordapp.com/attachments/997774498973626418/1123118877983899690/IMG_3724.png" },
-  {name : "Vivaan Vora", image:"https://cdn.discordapp.com/attachments/1065021922447999036/1079588343773413486/vivaan-vora.04d0429.png"},
+  {
+    name: "Caitelyn Huang ",
+    image:
+      "https://cdn.discordapp.com/attachments/997774498973626418/1123118877983899690/IMG_3724.png",
+  },
+  {
+    name: "Vivaan Vora",
+    image:
+      "https://cdn.discordapp.com/attachments/1065021922447999036/1079588343773413486/vivaan-vora.04d0429.png",
+  },
 ];
 const faqData = [
   {
     question: "Who can participate at OasisHacks?",
-    answer: "OskiHacks is open to all students, under the age of 18, who are interested in technology, engineering, and innovation, but we aim to be a high school student driven hackathon.",
+    answer:
+      "OskiHacks is open to all students, under the age of 18, who are interested in technology, engineering, and innovation, but we aim to be a high school student driven hackathon.",
   },
   {
     question: "What resources will be provided to participants at OasisHacks?",
-    answer: "Participants will have access to a range of resources, including expert mentorship, cutting-edge technologies and platforms, and networking opportunities with peers and industry partners.",
+    answer:
+      "Participants will have access to a range of resources, including expert mentorship, cutting-edge technologies and platforms, and networking opportunities with peers and industry partners.",
   },
   {
-    question: "Can I participate as an individual, or do I need to form a team?",
-    answer: "You can participate as an individual or as part of a team. We encourage participants to form teams of up to 4 members to promote collaboration and diversity of skills.",
+    question:
+      "Can I participate as an individual, or do I need to form a team?",
+    answer:
+      "You can participate as an individual or as part of a team. We encourage participants to form teams of up to 4 members to promote collaboration and diversity of skills.",
   },
   {
     question: "What are the prizes for the OasisHacks?",
-    answer: "The prize details will be announced closer to the event date. However, previous years have offered cash prizes, sponsor prizes, and other valuable rewards.",
+    answer:
+      "The prize details will be announced closer to the event date. However, previous years have offered cash prizes, sponsor prizes, and other valuable rewards.",
   },
-  { question: "When and where is OasisHacks taking place?  ",
-    answer: "he date has been decided to be on August 6th, 2023. This hackathon is an in-person, 12 hour long hackathon at Circuit Launch in Oakland, CA. Stay tuned on our Discord for more updates (https://discord.gg/Mtt9mGNu3Z)."
-  }
+  {
+    question: "When and where is OasisHacks taking place?  ",
+    answer:
+      "he date has been decided to be on August 6th, 2023. This hackathon is an in-person, 12 hour long hackathon at Circuit Launch in Oakland, CA. Stay tuned on our Discord for more updates (https://discord.gg/Mtt9mGNu3Z).",
+  },
 ];
 
 const App = () => (
@@ -115,8 +148,13 @@ const App = () => (
         direction="column"
         minHeight="100vh"
       >
-        <Image src="/oasislogo.png" alt="Logo" boxSize="100px" mb="4" />
-
+        <motion.div
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Image src="/oasislogo.png" alt="Logo" boxSize="100px" mb="4" />
+        </motion.div>
         <motion.div
           initial={{ y: -100 }}
           animate={{ y: 0 }}
@@ -136,71 +174,263 @@ const App = () => (
           </Text>
         </motion.div>
       </Flex>
-      {/* How to Join */}
+
+      {/* About Oasis */}
+      <Flex
+        p="6"
+        direction={{ base: "column", lg: "row" }}
+        justify="space-between"
+        id="about"
+      >
+        <Box flex="1" mr={{ base: 0, lg: "6" }} mb={{ base: "6", lg: 0 }}>
+          <Heading as="h3" size="lg" textAlign="center">
+            About Oasis Hacks
+          </Heading>
+          <Text fontSize="md" px="4" mt="4">
+            Oasis Hacks, hosted by Cal Commit, is an exciting hackathon event
+            that brings together creative minds and tech enthusiasts to
+            collaborate and build innovative solutions. This year, the hackathon
+            will take place on August 6th from 9am to 9pm PST at Circuit Launch
+            in Oakland, California.
+          </Text>
+          <Text fontSize="md" px="4" mt="4">
+            Oasis Hacks aims to provide a stimulating environment for
+            participants to showcase their skills, explore new technologies, and
+            tackle real-world challenges. Whether you're an experienced
+            developer, designer, or simply have a passion for problem-solving,
+            this event offers a unique opportunity to network, learn, and
+            create.
+          </Text>
+          <Text fontSize="md" px="4" mt="4">
+            During the 12-hour hackathon, participants will form teams and work
+            diligently to develop projects that address a specific theme.
+            Mentors and industry experts will be available throughout the event
+            to guide and support teams in their endeavors.
+          </Text>
+
+          <Text fontSize="md" px="4" mt="4">
+            At the end of the hackathon, teams will present their projects.
+            Outstanding projects will have the chance to win prizes, gain
+            recognition, and potentially attract the attention of investors and
+            sponsors.
+          </Text>
+
+          <Text fontSize="md" px="4" mt="4">
+            Oasis Hacks is not only about competition but also fostering a
+            vibrant community of innovators. Participants will have ample
+            opportunities to network with like-minded individuals, forge
+            valuable connections, and gain insights from successful
+            entrepreneurs and thought leaders.
+          </Text>
+
+          <Text fontSize="md" px="4" mt="4">
+            Whether you're a seasoned hacker or a newcomer to the world of
+            technology, Oasis Hacks promises an immersive and rewarding
+            experience. So mark your calendars and get ready to embark on a day
+            of creativity, collaboration, and innovation on August 6th at
+            Circuit Launch in Oakland.
+          </Text>
+        </Box>
+
+        <Box flex="1" ml={{ base: 0, lg: "6" }}>
+          <Heading as="h3" size="lg" textAlign="center">
+            Schedule
+          </Heading>
+          <Table
+            borderRadius="10px"
+            sx={{ opacity: 0.75 }}
+            bgColor="white"
+            variant="simple"
+            mt="4"
+          >
+            <Thead>
+              <Tr>
+                <Th>Time</Th>
+                <Th>Event</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <Td>9:00 - 10:00</Td>
+                <Td>Welcome / Opening Ceremony</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <Td>10:00 - 11:00</Td>
+                <Td>Workshop 1: Introduction to Python</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <Td>11:00 - 12:00</Td>
+                <Td>Activity 1: Icebreaker Challenges</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Td>12:00 - 1:00</Td>
+                <Td>Workshop 2: Introduction to Web Development</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <Td>1:00 - 2:00</Td>
+                <Td>Lunch Break</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <Td>2:00 - 3:00</Td>
+                <Td>Workshop 3: MARGIN VS PADDING</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
+                <Td>3:00 - 4:00</Td>
+                <Td>Activity 2: Team Brainstorming Session</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <Td>4:00 - 5:00</Td>
+                <Td>Workshop 4: Advanced JavaScript Techniques</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+              >
+                <Td>5:00 - 6:00</Td>
+                <Td>Activity 3: Code Challenge</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+              >
+                <Td>6:00 - 7:00</Td>
+                <Td>Activity 4: Break & Networking</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.1 }}
+              >
+                <Td>7:00 - 8:30</Td>
+                <Td>Judging Period</Td>
+              </MotionTr>
+              <MotionTr
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+              >
+                <Td>8:30 - 9:00</Td>
+                <Td>Closing Ceremony & Award Announcement</Td>
+              </MotionTr>
+            </Tbody>
+          </Table>
+        </Box>
+      </Flex>
+      {/* Event Info */}
 
       <Box p="6">
-        <Heading as="h2" size="2xl" textAlign="center" mb="6">
-          How to Join
-        </Heading>
         <Center>
-          <Box maxWidth="800px" textAlign="center">
-            <Flex alignItems="center" mb="4" justifyContent="space-between">
-              <Text fontSize="30px">
-                <b>Date: &nbsp;  </b>
-              </Text>
-              <Badge fontSize="2em" colorScheme="yellow">
-                August 6, 2023
-              </Badge>
-            </Flex>
-            <Flex alignItems="center" mb="4" justifyContent="space-between">
-              <Text fontSize="30px">
-                <b>Time:</b>
-              </Text>
-              <Badge fontSize="2em" colorScheme="yellow">
-                8 A.M. - 8 P.M.
-              </Badge>
-            </Flex>
-            <Text mb="4">
-              <b>Address:</b> Circuit Launch, Oakland
+          <Box
+            maxWidth="1500px"
+            bgColor="white"
+            padding="20px"
+            borderRadius="10px"
+            sx={{ opacity: 0.9 }}
+            textAlign={{ base: "center" }}
+          >
+            <Heading mb="6" textAlign="center">
+              Event Info
+            </Heading>
+            <Text
+              width={{ base: "100%", md: "100%" }}
+              textAlign="center"
+              mb="4"
+              padding={"25px"}
+            >
+              <b>Circuit Launch</b>, a prominent tech hub in Oakland, serves as
+              the ideal venue for Oasis Hacks. With its state-of-the-art
+              facilities, collaborative spaces, makes it a magnificent
+              environment for hackers to immerse themselves into.
             </Text>
-            <Button colorScheme="teal" mt="6">
-              <a href="https://calcommit.org">Join Here!</a>
-            </Button>
+
+            <Flex
+              direction={{ base: "column", md: "row" }}
+              mb="4"
+              justifyContent="space-between"
+            >
+              <Box flex="1" mb={{ base: "6", md: "0" }}>
+                <Flex mb="4" align="center">
+                  <Text fontSize="1.5em" color="gray.700">
+                    <b>Date:</b>
+                  </Text>
+                  <Text textAlign="left" fontSize="1.5em" color="gray.700">
+                    &nbsp; August 6, 2023
+                  </Text>
+                </Flex>
+                <Flex mb="4" align="center">
+                  <Text fontSize="1.5em" color="gray.700">
+                    <b>Time:</b>
+                  </Text>
+                  <Text fontSize="1.5em" color="gray.700">
+                    &nbsp; 9 A.M. - 9 P.M.
+                  </Text>
+                </Flex>
+                <Flex mb="4" align="center">
+                  <Text fontSize="1.5em" color="gray.700">
+                    <b>Address: </b>
+                  </Text>
+                  <Text paddingLeft="15px" fontSize="1.5em" color="gray.700">
+                    8000 Edgewater Dr Suite 200
+                  </Text>
+                </Flex>
+              </Box>
+              <Box flex="1" mt={{ base: "6", md: "0" }} sx={{ opacity: 1.5 }}>
+                {/* Google Maps Embed Here */}
+                <Box
+                  borderWidth="5px"
+                  marginLeft={{ base: 0, md: 6 }}
+                  width={{ base: "100%", md: 900 }}
+                  borderRadius="lg"
+                  overflow="hidden"
+                >
+                  <iframe
+                    width="100%"
+                    height={{ base: "300", md: "450" }}
+                    frameBorder="0"
+                    style={{ border: 0 }}
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB6pgL9PH40S7F5v7lQrpXAE0MxqGIPPtE&q=Circuit+Launch,Oakland"
+                    allowFullScreen
+                  ></iframe>
+                </Box>
+              </Box>
+            </Flex>
           </Box>
         </Center>
       </Box>
-
-      {/* About Us Section */}
-      <MotionBox
-        p="6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        overflow="hidden"
-      >
-        <Heading as="h3" size="lg" textAlign="center" py="4">
-          About Cal Commit
-        </Heading>
-        <MotionText fontSize="md" px="4" mt="4">
-          Our mission is to equip computer science students with the skills and
-          tools for successful collaboration and software development through
-          participation in open-source projects, training in version control
-          software, and competitions.
-        </MotionText>
-        <MotionText fontSize="md" px="4" mt="4">
-          As a non-profit organization, we award volunteer hours to those who
-          contribute to open source projects. We also retain the ability to
-          distribute the President's Volunteer Service Award. Which is a highly
-          recognized award that is given to those who volunteer a certain amount
-          of hours. This looks great on college applications and resumes.
-        </MotionText>
-        <MotionText fontSize="md" px="4" mt="4" mb="4">
-          Visit our website at{" "}
-          <Link href="https://calcommit.org" color="yellow.200">
-            calcommit.org
-          </Link>
-        </MotionText>
-      </MotionBox>
 
       {/* Our Team Section */}
       <Box p="6">
@@ -259,125 +489,12 @@ const App = () => (
         </Flex>
       </Box>
 
-      {/* Schedule */}
-      <Box p="6">
-        <Heading as="h3" size="lg" textAlign="center">
-          Schedule
-        </Heading>
-        <Table variant="simple">
-  <Thead>
-    <Tr>
-      <Th>Time</Th>
-      <Th>Event</Th>
-    </Tr>
-  </Thead>
-  <Tbody>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-    >
-      <Td>8:00 - 9:00</Td>
-      <Td>Welcome / Opening Ceremony</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-    >
-      <Td>9:00 - 10:00</Td>
-      <Td>Workshop 1: Introduction to Python</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-    >
-      <Td>10:00 - 11:00</Td>
-      <Td>Activity 1: Icebreaker Challenges</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.4 }}
-    >
-      <Td>11:00 - 12:00</Td>
-      <Td>Workshop 2: Introduction to Web Development</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
-    >
-      <Td>12:00 - 1:00</Td>
-      <Td>Lunch Break</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.6 }}
-    >
-      <Td>1:00 - 2:00</Td>
-      <Td>Workshop 3: MARGIN VS PADDING</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.7 }}
-    >
-      <Td>2:00 - 3:00</Td>
-      <Td>Activity 2: Team Brainstorming Session</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
-    >
-      <Td>3:00 - 4:00</Td>
-      <Td>Workshop 4: Advanced JavaScript Techniques</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.9 }}
-    >
-      <Td>4:00 - 5:00</Td>
-      <Td>Activity 3: Code Challenge</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 1 }}
-    >
-      <Td>5:00 - 6:00</Td>
-      <Td>Activity 4: Break & Networking</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 1.1 }}
-    >
-      <Td>6:00 - 7:30</Td>
-      <Td>Judging Period</Td>
-    </MotionTr>
-    <MotionTr
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 1.2 }}
-    >
-      <Td>7:30 - 8:00</Td>
-      <Td>Closing Ceremony & Award Announcement</Td>
-    </MotionTr>
-  </Tbody>
-</Table>
-
-      </Box>
       {/* FAQ Section */}
       <Box p="6">
         <Heading as="h3" size="lg" textAlign="center">
           FAQ
         </Heading>
-        <Accordion allowMultiple mt="4">
+        <Accordion allowMultiple mt="4" bgColor="white" sx={{ opacity: 0.7 }}>
           {faqData.map((faq, i) => (
             <AccordionItem key={i}>
               <AccordionButton>
@@ -401,6 +518,10 @@ const App = () => (
         </Text>
       </Flex>
     </Box>
+    <script
+      src="https://kit.fontawesome.com/6de65e3da1.js"
+      crossorigin="anonymous"
+    ></script>
   </ChakraProvider>
 );
 
