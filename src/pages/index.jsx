@@ -106,7 +106,7 @@ const faqData = [
   {
     question: "Who can participate at OasisHacks?",
     answer:
-      "OskiHacks is open to all students, under the age of 18, who are interested in technology, engineering, and innovation, but we aim to be a high school student driven hackathon.",
+      "Oasis Hacks is open to all students, under the age of 18, who are interested in technology, engineering, and innovation, but we aim to be a high school student driven hackathon.",
   },
   {
     question: "What resources will be provided to participants at OasisHacks?",
