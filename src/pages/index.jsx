@@ -173,6 +173,14 @@ const App = () => (
             A hackathon event by Cal Commit
           </Text>
         </motion.div>
+        <motion.div
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+
+        >
+          <Button as="a" href="https://forms.gle/bWCxHtRd2sK7g13S7" mt="4" colorScheme="green">Register </Button>
+        </motion.div>
       </Flex>
 
       {/* About Oasis */}
