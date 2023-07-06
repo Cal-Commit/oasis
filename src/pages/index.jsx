@@ -177,9 +177,15 @@ const App = () => (
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
-
         >
-          <Button as="a" href="https://forms.gle/bWCxHtRd2sK7g13S7" mt="4" colorScheme="green">Register </Button>
+          <Link target="blank" href="https://forms.gle/bWCxHtRd2sK7g13S7" isExternal>
+            <Button
+              mt="4"
+              colorScheme="green"
+            >
+              Register Now
+            </Button>
+          </Link>
         </motion.div>
       </Flex>
 
