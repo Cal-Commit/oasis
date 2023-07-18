@@ -512,7 +512,7 @@ const App = () => (
               Our Sponsors
             </Heading>
             <Text textAlign="center" mt="4" fontSize="md">
-              Want to sponsor us? <a href="your-link-here">Click here</a>
+              Want to sponsor us? <a href="https://docs.google.com/document/d/1Yz4AFh_wMZesS9cq4BvJdZ5YDOmXLsetzkJXqF0A_SI/edit?usp=sharing">Click here</a>
             </Text>
             {Object.entries(sponsorsData).map(([tier, sponsors]) => (
               <Box key={tier} mb="6">
