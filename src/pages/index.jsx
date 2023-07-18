@@ -61,7 +61,7 @@ const sponsorsData = {
     {
       name: "Postman",
       image:
-        "https://ww1.prweb.com/prfiles/2017/04/12/15013279/gI_62552_200x200_360%20logo.png",
+        "https://cdn.discordapp.com/attachments/1107512267651686470/1130900718568624138/postman-orange-logo_1.png",
     },
   ],
 };
