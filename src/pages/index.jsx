@@ -33,7 +33,7 @@ import "@fontsource/chelsea-market";
 import theme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import Link from "next/link";
-
+import { Sponsor } from "@/components/sponsor";
 const sponsorsData = {
   gold: [
     {
@@ -65,28 +65,6 @@ const sponsorsData = {
     },
   ],
 };
-const Sponsor = ({ name, image }) => {
-  return (
-    <Box
-      borderRadius="lg"
-      boxShadow="md"
-      _hover={{ transform: "scale(1.05)", transition: "transform 0.2s" }}
-      maxW="sm"
-      borderWidth="1px"
-      backgroundColor="rgba(255, 255, 255, 0.8)" // slightly opaque white
-    >
-      <Image padding={5} src={image} alt={name} objectFit="cover" />
-      <Box p="6">
-        <Box d="flex" alignItems="baseline">
-          <Text fontWeight="bold" fontSize="lg" ml="2">
-            {name}
-          </Text>
-        </Box>
-      </Box>
-    </Box>
-  );
-};
-
 const customScrollBar = css`
   ::-webkit-scrollbar {
     width: 0px;
@@ -500,42 +478,38 @@ const App = () => (
         </Center>
       </Box>
       {/* Sponsors Section */}
-      <Box
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        minH="100vh"
-        p={6}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100%",
+        }}
       >
-          <Box>
-            <Heading as="h3" size="lg" textAlign="center">
-              Our Sponsors
-            </Heading>
-            <Text textAlign="center" mt="4" fontSize="md">
-              Want to sponsor us? <a href="https://docs.google.com/document/d/1Yz4AFh_wMZesS9cq4BvJdZ5YDOmXLsetzkJXqF0A_SI/edit?usp=sharing">Click here</a>
-            </Text>
-            {Object.entries(sponsorsData).map(([tier, sponsors]) => (
-              <Box key={tier} mb="6">
-                <Heading as="h4" size="md" mb="4" textAlign="left">
-                  {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
-                </Heading>
-                <Grid
-                  templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-                  gap="6"
-                  justifyItems="center"
-                >
-                  {sponsors.map((sponsor, i) => (
-                    <Sponsor
-                      key={i}
-                      name={sponsor.name}
-                      image={sponsor.image}
-                    />
-                  ))}
-                </Grid>
-              </Box>
-            ))}
-          </Box>
-      </Box>
+        <Box p="6" width="40%" justifyContentContent={"center"}>
+          <Heading as="h3" size="lg" textAlign="center">
+            Our Sponsors
+          </Heading>
+          <Text mb="6" textAlign="center" mt="4" fontSize="md">
+            Want to sponsor us? <a href="https://docs.google.com/document/d/1Yz4AFh_wMZesS9cq4BvJdZ5YDOmXLsetzkJXqF0A_SI/edit?usp=sharing">Click here</a>
+          </Text>
+          {Object.entries(sponsorsData).map(([tier, sponsors]) => (
+            <Box justifyContent={"center"} key={tier} mb="6">
+              <Heading as="h4" size="s" mb="4">
+                {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
+              </Heading>
+              <Grid
+                templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+                gap="6"
+              >
+                {sponsors.map((sponsor, i) => (
+                  <Sponsor key={i} name={sponsor.name} image={sponsor.image} />
+                ))}
+              </Grid>
+            </Box>
+          ))}
+        </Box>
+      </div>
 
       {/* Our Team Section */}
       <Box p="6">
