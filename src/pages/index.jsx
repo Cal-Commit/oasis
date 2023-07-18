@@ -33,7 +33,6 @@ import "@fontsource/chelsea-market";
 import theme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import Link from "next/link";
-import { Sponsor } from "../components/sponsor";
 
 const sponsorsData = {
   gold: [
@@ -41,26 +40,51 @@ const sponsorsData = {
       name: "Hack Club",
       image: "https://assets.hackclub.com/flag-orpheus-top.png",
     },
-    // Add more gold sponsors as needed...
+    {
+      name: "Hack Club Bank",
+      image: "https://assets.hackclub.com/hack-club-bank-light.png",
+    },
   ],
   silver: [
     {
       name: "C2 Education",
-      image: "https://pbs.twimg.com/profile_images/1164190359251050497/2_nqUgf9_400x400.jpg",
+      image:
+        "https://theretailconnection.net/wp-content/uploads/ClientLogos/C2-Education-4c.png",
     },
-    // Add more silver sponsors as needed...
   ],
   nonmonetary: [
     {
       name: "XYZ Domains",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/.xyz_logo.svg/800px-.xyz_logo.svg.png",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/.xyz_logo.svg/800px-.xyz_logo.svg.png",
     },
     {
-      name: "Postmates",
-      image: "https://us.jobsspotter.com/wp-content/uploads/2021/06/postmates.png"
-    }
-    // Add more other sponsors as needed...
+      name: "Postman",
+      image:
+        "https://ww1.prweb.com/prfiles/2017/04/12/15013279/gI_62552_200x200_360%20logo.png",
+    },
   ],
+};
+const Sponsor = ({ name, image }) => {
+  return (
+    <Box
+      borderRadius="lg"
+      boxShadow="md"
+      _hover={{ transform: "scale(1.05)", transition: "transform 0.2s" }}
+      maxW="sm"
+      borderWidth="1px"
+      backgroundColor="rgba(255, 255, 255, 0.8)" // slightly opaque white
+    >
+      <Image padding={5} src={image} alt={name} objectFit="cover" />
+      <Box p="6">
+        <Box d="flex" alignItems="baseline">
+          <Text fontWeight="bold" fontSize="lg" ml="2">
+            {name}
+          </Text>
+        </Box>
+      </Box>
+    </Box>
+  );
 };
 
 const customScrollBar = css`
@@ -476,25 +500,41 @@ const App = () => (
         </Center>
       </Box>
       {/* Sponsors Section */}
-      <Box p="6">
-        <Heading as="h3" size="lg" textAlign="center">
-          Our Sponsors
-        </Heading>
-        {Object.entries(sponsorsData).map(([tier, sponsors]) => (
-          <Box justifyContent={"center"} key={tier} mb="6">
-            <Heading as="h4" size="md" mb="4">
-              {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
+      <Box
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        minH="100vh"
+        p={6}
+      >
+          <Box>
+            <Heading as="h3" size="lg" textAlign="center">
+              Our Sponsors
             </Heading>
-            <Grid
-              templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-              gap="6"
-            >
-              {sponsors.map((sponsor, i) => (
-                <Sponsor key={i} name={sponsor.name} image={sponsor.image} />
-              ))}
-            </Grid>
+            <Text textAlign="center" mt="4" fontSize="md">
+              Want to sponsor us? <a href="your-link-here">Click here</a>
+            </Text>
+            {Object.entries(sponsorsData).map(([tier, sponsors]) => (
+              <Box key={tier} mb="6">
+                <Heading as="h4" size="md" mb="4" textAlign="left">
+                  {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
+                </Heading>
+                <Grid
+                  templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+                  gap="6"
+                  justifyItems="center"
+                >
+                  {sponsors.map((sponsor, i) => (
+                    <Sponsor
+                      key={i}
+                      name={sponsor.name}
+                      image={sponsor.image}
+                    />
+                  ))}
+                </Grid>
+              </Box>
+            ))}
           </Box>
-        ))}
       </Box>
 
       {/* Our Team Section */}
