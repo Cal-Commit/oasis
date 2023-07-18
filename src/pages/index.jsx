@@ -33,6 +33,35 @@ import "@fontsource/chelsea-market";
 import theme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import Link from "next/link";
+import { Sponsor } from "../components/sponsor";
+
+const sponsorsData = {
+  gold: [
+    {
+      name: "Hack Club",
+      image: "https://assets.hackclub.com/flag-orpheus-top.png",
+    },
+    // Add more gold sponsors as needed...
+  ],
+  silver: [
+    {
+      name: "C2 Education",
+      image: "https://pbs.twimg.com/profile_images/1164190359251050497/2_nqUgf9_400x400.jpg",
+    },
+    // Add more silver sponsors as needed...
+  ],
+  nonmonetary: [
+    {
+      name: "XYZ Domains",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/.xyz_logo.svg/800px-.xyz_logo.svg.png",
+    },
+    {
+      name: "Postmates",
+      image: "https://us.jobsspotter.com/wp-content/uploads/2021/06/postmates.png"
+    }
+    // Add more other sponsors as needed...
+  ],
+};
 
 const customScrollBar = css`
   ::-webkit-scrollbar {
@@ -178,11 +207,12 @@ const App = () => (
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link target="blank" href="https://forms.gle/bWCxHtRd2sK7g13S7" isExternal>
-            <Button
-              mt="4"
-              colorScheme="green"
-            >
+          <Link
+            target="blank"
+            href="https://forms.gle/bWCxHtRd2sK7g13S7"
+            isExternal
+          >
+            <Button mt="4" colorScheme="green">
               Register Now
             </Button>
           </Link>
@@ -278,7 +308,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Td>10:00 - 11:00</Td>
-                <Td>Workshop 1: Introduction to Python</Td>
+                <Td>Networking Session</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -294,7 +324,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <Td>12:00 - 1:00</Td>
-                <Td>Workshop 2: Introduction to Web Development</Td>
+                <Td>Workshop 1: Introduction to Web Development</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -310,7 +340,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
                 <Td>2:00 - 3:00</Td>
-                <Td>Workshop 3: MARGIN VS PADDING</Td>
+                <Td>Workshop 2: MARGIN VS PADDING</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -326,7 +356,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <Td>4:00 - 5:00</Td>
-                <Td>Workshop 4: Advanced JavaScript Techniques</Td>
+                <Td>Workshop 3: Advanced JavaScript Techniques</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -342,7 +372,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 1 }}
               >
                 <Td>6:00 - 7:00</Td>
-                <Td>Activity 4: Break & Networking</Td>
+                <Td>Workshop 4: Introduction to Python</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -445,6 +475,27 @@ const App = () => (
           </Box>
         </Center>
       </Box>
+      {/* Sponsors Section */}
+      <Box p="6">
+        <Heading as="h3" size="lg" textAlign="center">
+          Our Sponsors
+        </Heading>
+        {Object.entries(sponsorsData).map(([tier, sponsors]) => (
+          <Box justifyContent={"center"} key={tier} mb="6">
+            <Heading as="h4" size="md" mb="4">
+              {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
+            </Heading>
+            <Grid
+              templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+              gap="6"
+            >
+              {sponsors.map((sponsor, i) => (
+                <Sponsor key={i} name={sponsor.name} image={sponsor.image} />
+              ))}
+            </Grid>
+          </Box>
+        ))}
+      </Box>
 
       {/* Our Team Section */}
       <Box p="6">
@@ -468,7 +519,6 @@ const App = () => (
               <MotionAvatar size="2xl" name={member.name} src={member.image} />
               <Flex width="100%" justifyContent="center">
                 {" "}
-                {/* Add this */}
                 <MotionText mt="2" isTruncated>
                   {member.name}
                 </MotionText>
@@ -508,7 +558,12 @@ const App = () => (
         <Heading as="h3" size="lg" textAlign="center">
           FAQ
         </Heading>
-        <Accordion allowMultiple mt="4" bgColor="white" sx={{ opacity: 0.7 }}>
+        <Accordion
+          allowMultiple
+          mt="4"
+          bgColor="white"
+          sx={{ borderRadius: 10, opacity: 0.7 }}
+        >
           {faqData.map((faq, i) => (
             <AccordionItem key={i}>
               <AccordionButton>
