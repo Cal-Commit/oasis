@@ -180,7 +180,7 @@ const faqData = [
   {
     question: "When and where is OasisHacks taking place?  ",
     answer:
-      "he date has been decided to be on August 6th, 2023. This hackathon is an in-person, 12 hour long hackathon at Circuit Launch in Oakland, CA. Stay tuned on our Discord for more updates (https://discord.gg/Mtt9mGNu3Z).",
+      "The date has been decided to be on August 6th, 2023. This hackathon is an in-person, 12 hour long hackathon at Circuit Launch in Oakland, CA. Stay tuned on our Discord for more updates (https://discord.gg/Mtt9mGNu3Z).",
   },
 ];
 
