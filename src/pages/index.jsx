@@ -491,7 +491,7 @@ const App = () => (
             Our Sponsors
           </Heading>
           <Text mb="6" textAlign="center" mt="4" fontSize="md">
-            Want to sponsor us? <a href="/prospectus.pdf"><u>View our Sponsorship Prospectus</u></a>
+            Want to sponsor us? <a href="/prospectus.pdf"><u>View our Sponsor Prospectus</u></a>
           </Text>
           {Object.entries(sponsorsData).map(([tier, sponsors]) => (
             <Box justifyContent={"center"} key={tier} mb="6">
