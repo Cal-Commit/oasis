@@ -51,7 +51,6 @@ export const Sponsor = ({ name, image, tier }) => {
       justifyContent="center"
     >
       <Image boxSize="100px" objectFit="contain" src={image} alt={name} />
-      <Text ml="3" mt="2">{name}</Text>
     </Box>
   );
 };

@@ -63,6 +63,17 @@ const sponsorsData = {
       image:
         "https://cdn.discordapp.com/attachments/1107512267651686470/1130900718568624138/postman-orange-logo_1.png",
     },
+    {
+      name: "Custom Ink",
+      image: "https://upload.wikimedia.org/wikipedia/en/0/0c/Custom_Ink_logo.png",
+    },
+    { name: "Interview Cake",
+      image: "https://peddiehacks.peddie.org/FinalLogos/interviewcake.png"
+    },
+    {
+      name: "Taskade",
+      image: "https://www.taskade.com/static_images/taskade-circle-logo-full-black.png",
+    }
   ],
 };
 const customScrollBar = css`
@@ -486,7 +497,7 @@ const App = () => (
           width: "100%",
         }}
       >
-        <Box p="6" width="40%" justifyContentContent={"center"}>
+        <Box p="6" width="60%" justifyContentContent={"center"}>
           <Heading as="h3" size="lg" textAlign="center">
             Our Sponsors
           </Heading>
