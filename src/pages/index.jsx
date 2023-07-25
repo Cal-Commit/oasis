@@ -44,6 +44,10 @@ const sponsorsData = {
       name: "Hack Club Bank",
       image: "https://assets.hackclub.com/hack-club-bank-light.png",
     },
+    {
+      name: "LeanGap",
+      image: "https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/c5hwz078diwyssyuqzeh",
+    }
   ],
   silver: [
     {
@@ -73,6 +77,10 @@ const sponsorsData = {
     {
       name: "Taskade",
       image: "https://www.taskade.com/static_images/taskade-circle-logo-full-black.png",
+    },
+    {
+      name: "1Password",
+      image: "https://images.prismic.io/brandfetch/91d5013a-134f-4041-9910-fa0a27dd3ec3_2.png?auto=compress,format",
     }
   ],
 };
