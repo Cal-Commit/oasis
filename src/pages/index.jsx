@@ -26,7 +26,7 @@ import {
   AccordionPanel,
   AccordionIcon,
   SimpleGrid,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import GoogleMapReact from "google-map-react";
@@ -49,8 +49,9 @@ const sponsorsData = {
     },
     {
       name: "LeanGap",
-      image: "https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/c5hwz078diwyssyuqzeh",
-    }
+      image:
+        "https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/c5hwz078diwyssyuqzeh",
+    },
   ],
   silver: [
     {
@@ -72,16 +73,19 @@ const sponsorsData = {
     },
     {
       name: "Custom Ink",
-      image: "https://upload.wikimedia.org/wikipedia/en/0/0c/Custom_Ink_logo.png",
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/0/0c/Custom_Ink_logo.png",
     },
     {
       name: "Taskade",
-      image: "https://www.taskade.com/static_images/taskade-circle-logo-full-black.png",
+      image:
+        "https://www.taskade.com/static_images/taskade-circle-logo-full-black.png",
     },
     {
       name: "1Password",
-      image: "https://images.prismic.io/brandfetch/91d5013a-134f-4041-9910-fa0a27dd3ec3_2.png?auto=compress,format",
-    }
+      image:
+        "https://images.prismic.io/brandfetch/91d5013a-134f-4041-9910-fa0a27dd3ec3_2.png?auto=compress,format",
+    },
   ],
 };
 const customScrollBar = css`
@@ -195,18 +199,18 @@ const prizesData = [
     totalValue: "$190",
     prizes: [
       "2x Bluetooth Wireless Headphones",
-      "Drone (Small sized)",
-      "4k Action Camera",
+      "1x Drone (Small sized)",
+      "1x 4k Action Camera",
     ],
   },
   {
     category: "Third Place",
     totalValue: "$140",
     prizes: [
-      "Wireless Mini Pocket Printer",
-      "Bluetooth Earbuds",
-      "T&G Bluetooth Speakers",
-      "VR Headset",
+      "1x Wireless Mini Pocket Printer",
+      "1x Bluetooth Earbuds",
+      "1x T&G Bluetooth Speakers",
+      "1x VR Headset",
     ],
   },
   {
@@ -217,13 +221,15 @@ const prizesData = [
   {
     category: "All Participants",
     totalValue: "TBA",
-    prizes: ["XYZ Domain",
-    "1Password | 1 year free",
-    "Taskade | 1 year free ",
-    "Postman | Swag for Posts",
-    "Echo3D | 1 month free",
-    "LeanGap | Free Website Starter Bundle"]
-  }
+    prizes: [
+      "XYZ Domain",
+      "1Password | 1 year free",
+      "Taskade | 1 year free ",
+      "Postman | Swag for Posts",
+      "Echo3D | 1 month free",
+      "LeanGap | Free Website Starter Bundle",
+    ],
+  },
 ];
 
 const App = () => (
@@ -284,8 +290,8 @@ const App = () => (
           </Link>
         </motion.div>
       </Flex>
-{/* About Oasis */}
-<Flex
+      {/* About Oasis */}
+      <Flex
         p="6"
         direction={{ base: "column", lg: "row" }}
         justify="space-between"
@@ -405,7 +411,9 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
                 <Td>2:00 - 3:00</Td>
-                <Td>Workshop 2: Margin vs Padding (Web Development Workshop)</Td>
+                <Td>
+                  Workshop 2: Margin vs Padding (Web Development Workshop)
+                </Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -540,8 +548,8 @@ const App = () => (
           </Box>
         </Center>
       </Box>
-     {/* Sponsors and Prizes */}
-     <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={9}>
+      {/* Sponsors and Prizes */}
+      <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={9}>
         {/* Sponsors Section */}
         <Box ml={{ base: "0", md: "40" }} p={6}>
           <Heading as="h3" size="lg" textAlign="center">
