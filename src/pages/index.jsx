@@ -221,7 +221,8 @@ const prizesData = [
     "1Password | 1 year free",
     "Taskade | 1 year free ",
     "Postman | Swag for Posts",
-    "Echo3D | 1 month free"]
+    "Echo3D | 1 month free",
+    "LeanGap | Free Website Starter Bundle"]
   }
 ];
 
