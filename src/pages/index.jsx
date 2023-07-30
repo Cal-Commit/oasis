@@ -25,6 +25,8 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  SimpleGrid,
+  VStack
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import GoogleMapReact from "google-map-react";
@@ -34,6 +36,7 @@ import theme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import Link from "next/link";
 import { Sponsor } from "@/components/sponsor";
+
 const sponsorsData = {
   gold: [
     {
@@ -70,9 +73,6 @@ const sponsorsData = {
     {
       name: "Custom Ink",
       image: "https://upload.wikimedia.org/wikipedia/en/0/0c/Custom_Ink_logo.png",
-    },
-    { name: "Interview Cake",
-      image: "https://peddiehacks.peddie.org/FinalLogos/interviewcake.png"
     },
     {
       name: "Taskade",
@@ -180,6 +180,50 @@ const faqData = [
       "The date has been decided to be on August 6th, 2023. This hackathon is an in-person, 12 hour long hackathon at Circuit Launch in Oakland, CA. Stay tuned on our Discord for more updates (https://discord.gg/Mtt9mGNu3Z).",
   },
 ];
+const prizesData = [
+  {
+    category: "First Place",
+    totalValue: "$400",
+    prizes: [
+      "1x $250 Visa Gift Card",
+      "1x Portable Speaker",
+      "1x Portable LED Mini Projector",
+    ],
+  },
+  {
+    category: "Second Place",
+    totalValue: "$190",
+    prizes: [
+      "2x Bluetooth Wireless Headphones",
+      "Drone (Small sized)",
+      "4k Action Camera",
+    ],
+  },
+  {
+    category: "Third Place",
+    totalValue: "$140",
+    prizes: [
+      "Wireless Mini Pocket Printer",
+      "Bluetooth Earbuds",
+      "T&G Bluetooth Speakers",
+      "VR Headset",
+    ],
+  },
+  {
+    category: "Most Popular Project",
+    totalValue: "$50",
+    prizes: ["$50 CustomInk Voucher"],
+  },
+  {
+    category: "All Participants",
+    totalValue: "TBA",
+    prizes: ["XYZ Domain",
+    "1Password | 1 year free",
+    "Taskade | 1 year free ",
+    "Postman | Swag for Posts",
+    "Echo3D | 1 month free"]
+  }
+];
 
 const App = () => (
   <ChakraProvider theme={theme}>
@@ -239,9 +283,8 @@ const App = () => (
           </Link>
         </motion.div>
       </Flex>
-
-      {/* About Oasis */}
-      <Flex
+{/* About Oasis */}
+<Flex
         p="6"
         direction={{ base: "column", lg: "row" }}
         justify="space-between"
@@ -336,7 +379,7 @@ const App = () => (
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <Td>11:00 - 12:00</Td>
+                <Td>11:00 - 11:30</Td>
                 <Td>Activity 1: Icebreaker Challenges</Td>
               </MotionTr>
               <MotionTr
@@ -344,8 +387,8 @@ const App = () => (
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <Td>12:00 - 1:00</Td>
-                <Td>Workshop 1: Introduction to Web Development</Td>
+                <Td>11:30 - 1:00</Td>
+                <Td>Workshop 1: Postman Workshop</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -361,7 +404,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
                 <Td>2:00 - 3:00</Td>
-                <Td>Workshop 2: MARGIN VS PADDING</Td>
+                <Td>Workshop 2: Margin vs Padding (Web Development Workshop)</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -393,7 +436,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 1 }}
               >
                 <Td>6:00 - 7:00</Td>
-                <Td>Workshop 4: Introduction to Python</Td>
+                <Td>Project Presentations</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -401,7 +444,7 @@ const App = () => (
                 transition={{ duration: 0.5, delay: 1.1 }}
               >
                 <Td>7:00 - 8:30</Td>
-                <Td>Judging Period</Td>
+                <Td>Judging Period / Dinner</Td>
               </MotionTr>
               <MotionTr
                 initial={{ opacity: 0 }}
@@ -496,39 +539,59 @@ const App = () => (
           </Box>
         </Center>
       </Box>
-      {/* Sponsors Section */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
-        <Box p="6" width="60%" justifyContentContent={"center"}>
+     {/* Sponsors and Prizes */}
+     <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={9}>
+        {/* Sponsors Section */}
+        <Box ml={{ base: "0", md: "40" }} p={6}>
           <Heading as="h3" size="lg" textAlign="center">
             Our Sponsors
           </Heading>
           <Text mb="6" textAlign="center" mt="4" fontSize="md">
-            Want to sponsor us? <a href="/prospectus.pdf"><u>View our Sponsor Prospectus</u></a>
+            Want to sponsor us?{" "}
+            <a href="/prospectus.pdf">
+              <u>View our Sponsor Prospectus</u>
+            </a>
           </Text>
           {Object.entries(sponsorsData).map(([tier, sponsors]) => (
-            <Box justifyContent={"center"} key={tier} mb="6">
+            <Box key={tier} mb="6">
               <Heading as="h4" size="s" mb="4">
                 {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors
               </Heading>
-              <Grid
+              <SimpleGrid
                 templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
                 gap="6"
               >
                 {sponsors.map((sponsor, i) => (
                   <Sponsor key={i} name={sponsor.name} image={sponsor.image} />
                 ))}
-              </Grid>
+              </SimpleGrid>
             </Box>
           ))}
         </Box>
-      </div>
+
+        {/* Prizes Section */}
+        <Box p={6}>
+          <Heading as="h3" size="lg" textAlign="center">
+            Prizes
+          </Heading>
+          <VStack
+            divider={<Divider borderColor="gray.200" />}
+            spacing={4}
+            align="start"
+            mt={6}
+          >
+            {prizesData.map(({ category, totalValue, prizes }, i) => (
+              <Box key={i}>
+                <Heading size="md">{category}</Heading>
+                <Text color="gray.600">Total Value: {totalValue}</Text>
+                {prizes.map((prize, j) => (
+                  <Text key={j}>{prize}</Text>
+                ))}
+              </Box>
+            ))}
+          </VStack>
+        </Box>
+      </Grid>
 
       {/* Our Team Section */}
       <Box p="6">
@@ -571,12 +634,11 @@ const App = () => (
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              width="230px" // Set a fixed width
+              width="230px"
             >
               <MotionAvatar size="2xl" name={member.name} src={member.image} />
               <Flex width="100%" justifyContent="center">
                 {" "}
-                {/* Add this */}
                 <MotionText mt="2" isTruncated>
                   {member.name}
                 </MotionText>

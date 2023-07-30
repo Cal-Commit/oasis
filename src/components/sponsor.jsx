@@ -50,7 +50,7 @@ export const Sponsor = ({ name, image, tier }) => {
       alignItems="center"
       justifyContent="center"
     >
-      <Image boxSize="100px" objectFit="contain" src={image} alt={name} />
+      <Image boxSize="115px" objectFit="contain" src={image} alt={name} />
     </Box>
   );
 };
