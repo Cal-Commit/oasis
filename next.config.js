@@ -12,6 +12,11 @@ module.exports = {
         destination: 'https://forms.gle/FVJZxKM79Y2RaNzT7',
         permanent: true,
       },
+      {
+        source: '/popular',
+        destination: 'https://forms.gle/HAz4MgWy1gZFABiv7',
+        permanent: true,
+      }
     ]
   }
 }
